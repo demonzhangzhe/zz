@@ -12,7 +12,7 @@ specific language governing permissions and limitations under the License.
 """
 
 from django.shortcuts import render
-
+from django.http import HttpResponse
 
 # 开发框架中通过中间件默认是需要登录态的，如有不需要登录的，可添加装饰器login_exempt
 # 装饰器引入 from blueapps.account.decorators import login_exempt
@@ -35,3 +35,6 @@ def contact(request):
     联系页
     """
     return render(request, "home_application/contact.html")
+
+def Hello(request):
+    return HttpResponse('hello World!')
